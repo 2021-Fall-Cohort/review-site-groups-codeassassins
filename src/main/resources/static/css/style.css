@@ -1,0 +1,14 @@
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    display: inline-flex;
+    
+}
+
+ul li {
+    list-style: none;
+}
