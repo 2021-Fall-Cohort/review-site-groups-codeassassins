@@ -8,7 +8,6 @@ public class Phone {
     private String pricePoint;
 
 
-
     public Phone(String brand, String type, String name, String manufacturer, String pricePoint) {
         this.brand = brand;
         this.name = name;

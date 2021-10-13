@@ -7,9 +7,9 @@ public class Manufacturer {
     private String name;
     private String location;
 
-    Collection<Phone> phones;
+     Collection<Phone> phones;
 
-    public Manufacturer(String name, String location,  Phone... phoneModels) {
+    public Manufacturer(String name, String location, Phone... phoneModels) {
         this.name = name;
         this.location = location;
         this.phones = Arrays.asList(phoneModels);
