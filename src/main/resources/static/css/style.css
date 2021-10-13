@@ -12,10 +12,14 @@ nav {
 }
 
 a { 
- 
     text-decoration: none;
     color: #ffffff;
+}
 
+/* Hero image and header */
+
+#logo img {
+  width: 50%;
 }
 
 .hero {
@@ -47,4 +51,51 @@ nav li {
 
 ul li {
     list-style: none;
+}
+
+/* Phone List */
+
+.phone_list_display {
+  display: inline-flex;
+  justify-content: space-around;
+  margin-bottom: 5%;
+}
+
+.phone {
+  border-style: solid;
+  border-width: 1.5px;
+  width: 30%;
+  
+}
+
+.phones {
+  margin-bottom: 5%;
+  margin-top: 5%;
+  margin-left: 2%;
+}
+
+.phone_name, .phone_blurb {
+  text-align: left;
+  margin-top: 5%;
+  margin-left: 5% ;
+  margin-bottom: 5%;
+}
+
+.phone img {
+  width: 30%;
+  margin-left: 10%;
+}
+
+/* Manfacturer */
+
+.phone_manufacturer {
+  display: inline-flex;
+}
+
+.manufacturers {
+  display: inline-flex;
+}
+
+.manufacturer_logo img {
+  width: 30%;
 }
