@@ -18,7 +18,7 @@ public class PhoneController {
 
     @RequestMapping("/")
         public String getPhoneList() {
-            return "PhoneList";
+        return "PhoneList";
         }
  }
 

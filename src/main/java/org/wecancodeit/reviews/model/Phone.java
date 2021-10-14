@@ -11,7 +11,7 @@ public class Phone {
     public enum PhoneType{
         FLIP,
         SMART,
-        BAR,
+        BRICK,
         FABLET,
         SMART_FLIP
     }
