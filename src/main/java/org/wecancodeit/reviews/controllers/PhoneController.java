@@ -2,21 +2,18 @@ package org.wecancodeit.reviews.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.wecancodeit.reviews.model.Manufacturer;
-import org.wecancodeit.reviews.model.Phone;
-import org.wecancodeit.reviews.PhoneList;
+import org.wecancodeit.reviews.repos.ManufacturerRepository;
+import org.wecancodeit.reviews.repos.PhoneRepository;
 
 @Controller
 public class PhoneController {
 
-     private Manufacturer manufacturer;
-     private Phone phone;
-     private PhoneList phonelist;
+     private ManufacturerRepository manufacturerRepo;
+     private PhoneRepository phoneRepo;
 
-    public PhoneController(Manufacturer manufacturer, Phone phone, PhoneList phonelist) {
-        this.manufacturer = manufacturer;
-        this.phone = phone;
-        this.phonelist = phonelist;
+    public PhoneController(ManufacturerRepository manufacturerRepo, PhoneRepository phoneRepo) {
+        this.manufacturerRepo = manufacturerRepo;
+        this.phoneRepo = phoneRepo;
     }
 
     @RequestMapping("/")

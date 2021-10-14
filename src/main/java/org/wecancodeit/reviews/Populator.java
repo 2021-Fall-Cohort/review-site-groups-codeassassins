@@ -4,16 +4,17 @@ import org.springframework.boot.CommandLineRunner;
 import org.wecancodeit.reviews.model.Manufacturer;
 import org.wecancodeit.reviews.model.Phone;
 import org.wecancodeit.reviews.repos.ManufacturerRepository;
-import org.wecancodeit.reviews.repos.PhoneListRepository;
 import org.wecancodeit.reviews.repos.PhoneRepository;
 
 
 public class Populator implements CommandLineRunner {
     private ManufacturerRepository manufacturerRepo;
     private PhoneRepository phoneRepo;
-    private PhoneListRepository phoneListRepo;
 
-
+    public Populator(ManufacturerRepository manufacturerRepo, PhoneRepository phoneRepo) {
+        this.manufacturerRepo = manufacturerRepo;
+        this.phoneRepo = phoneRepo;
+    }
 
     @Override
     public void run(String... args) throws Exception {
