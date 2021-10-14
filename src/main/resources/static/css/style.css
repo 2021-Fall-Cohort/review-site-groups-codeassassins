@@ -24,7 +24,7 @@ a {
 
 .hero {
   height: 60vh;
-  background-image: url(https://images.pexels.com/photos/5199930/pexels-photo-5199930.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-image: url(../images/hero_image.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -93,9 +93,10 @@ ul li {
 }
 
 .manufacturers {
-  display: inline-flex;
+  margin-right: 10%;
 }
 
 .manufacturer_logo img {
-  width: 30%;
+  width: 10%;
+  display: inline-flex;
 }
