@@ -1,12 +1,13 @@
 package org.wecancodeit.reviews;
 
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 import org.wecancodeit.reviews.model.Manufacturer;
 import org.wecancodeit.reviews.model.Phone;
 import org.wecancodeit.reviews.repos.ManufacturerRepository;
 import org.wecancodeit.reviews.repos.PhoneRepository;
 
-
+@Component
 public class Populator implements CommandLineRunner {
     private ManufacturerRepository manufacturerRepo;
     private PhoneRepository phoneRepo;
@@ -18,11 +19,15 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Manufacturer Samsung = new Manufacturer("Samsung", "US");
-        Manufacturer Apple = new Manufacturer("Apple", "US");
-        Manufacturer Motorola = new Manufacturer("Motorola", "US");
+        Manufacturer samsung = new Manufacturer("Samsung", "US");
+        manufacturerRepo.save(samsung);
+        Manufacturer apple = new Manufacturer("Apple", "US");
+        manufacturerRepo.save(apple);
+        Manufacturer motorola = new Manufacturer("Motorola", "US");
+        manufacturerRepo.save(motorola);
 
-        Phone phone1 = new Phone("Z-Flip", Phone.PhoneType.SMART_FLIP,Samsung,Phone.PricePoint.$$$);
+        Phone phone1 = new Phone("Z-Flip", Phone.PhoneType.SMART_FLIP,samsung,Phone.PricePoint.$$$);
+        phoneRepo.save(phone1);
         //Phone phone2 = new Phone("Apple", "Smart Phone", "iPhone 12 Pro Max", "Apple", "$$$$");
         //Phone phone3 = new Phone("Motorola", "Flip Phone", "Razr", "Motorola", "$$");
 

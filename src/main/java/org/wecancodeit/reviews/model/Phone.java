@@ -24,7 +24,6 @@ public class Phone {
     @Id
     @GeneratedValue
     private long id;
-    private String brand;
     private String name;
     @ManyToOne
     private Manufacturer manufacturer;
@@ -37,11 +36,6 @@ public Phone(String name, PhoneType phoneType,  Manufacturer manufacturer, Price
         this.type = phoneType;
         this.manufacturer = manufacturer;
         this.pricePoint = pricePoint;
-    }
-
-    public String getBrand() {
-
-        return brand;
     }
 
     public PhoneType getType() {
