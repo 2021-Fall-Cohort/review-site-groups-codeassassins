@@ -1,9 +1,9 @@
-package org.wecancodeit.controllers;
+package org.wecancodeit.reviews.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.wecancodeit.reviews.Manufacturer;
-import org.wecancodeit.reviews.Phone;
+import org.wecancodeit.reviews.model.Manufacturer;
+import org.wecancodeit.reviews.model.Phone;
 import org.wecancodeit.reviews.PhoneList;
 
 @Controller
