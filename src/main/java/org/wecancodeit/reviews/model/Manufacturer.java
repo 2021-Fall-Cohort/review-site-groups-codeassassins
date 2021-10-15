@@ -24,9 +24,36 @@ public class Manufacturer {
 
     }
 
+<<<<<<< HEAD
     public String getName() {
         return name;
     }
+=======
+    public long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public Manufacturer(Manufacturer manufacturer) {
+    }
+
+
+//    public void addPhone(Phone phone) {
+//
+//        phones.add(phone);
+//    }
+
+
+
+
+>>>>>>> 65e9cf231d3581e1f75c8fb5119fb3d37efe39f8
 
     public String getLocation() {
         return location;
