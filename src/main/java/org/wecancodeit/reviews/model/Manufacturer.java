@@ -24,6 +24,22 @@ public class Manufacturer {
 
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public Manufacturer(Manufacturer manufacturer) {
+    }
+
+
 //    public void addPhone(Phone phone) {
 //
 //        phones.add(phone);

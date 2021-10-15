@@ -28,8 +28,10 @@ public class Populator implements CommandLineRunner {
 
         Phone phone1 = new Phone("Z-Flip", Phone.PhoneType.SMART_FLIP,samsung,Phone.PricePoint.$$$);
         phoneRepo.save(phone1);
-        //Phone phone2 = new Phone("Apple", "Smart Phone", "iPhone 12 Pro Max", "Apple", "$$$$");
-        //Phone phone3 = new Phone("Motorola", "Flip Phone", "Razr", "Motorola", "$$");
+        Phone phone2 = new Phone("iPhone 13", Phone.PhoneType.SMART, apple, Phone.PricePoint.$$$$);
+        phoneRepo.save(phone2);
+        Phone phone3 = new Phone("Razr", Phone.PhoneType.SMART_FLIP, motorola, Phone.PricePoint.$$$);
+        phoneRepo.save(phone3);
 
 
     }
