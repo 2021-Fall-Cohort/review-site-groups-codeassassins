@@ -24,13 +24,11 @@ public class Manufacturer {
 
     }
 
-//    public void addPhone(Phone phone) {
-//
-//        phones.add(phone);
-//    }
+    public String getName() {
+        return name;
+    }
 
-
-
-
-
+    public String getLocation() {
+        return location;
+    }
 }

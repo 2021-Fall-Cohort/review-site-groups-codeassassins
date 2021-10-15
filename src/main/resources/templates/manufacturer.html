@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Phone Reviews! - Manufacturer</title>
+  <link rel="stylesheet"  href="./css/style.css">
+
+</head>
+<body>
+<h1 th:text="{manufacturer.name}"></h1>
+<section>
+  <br>
+  <br>
+  <div class="manufacturer">
+
+    <h2 th:text="${manufacturer.name}">Samsung</h2>
+
+    <p th:text="${manufacturer.location}"></p>
+    <p th:text="${manufacturer.phone}"></p>
+  </div>
+</section>
+
+</body>
+</html>

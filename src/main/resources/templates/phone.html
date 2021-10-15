@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Phone Reviews! - iPhone</title>
+    <link rel="stylesheet"  href="./css/style.css">
+
 </head>
 <body>
+<h1 th:text="{phone.name}">Apple iPhone 13</h1>
+<section>
+    <br>
+    <br>
+    <div class="phone">
 
+        <h2 th:text="${phone.name}">iPhone</h2>
+        <p th:text="${phone.manufacturer}"></p>
+        <p th:text="${phone.description}"></p>
+        <p th:text="${phone.type}"></p>
+        <p th:text="${phone.pricePoint}"></p>
+
+
+    </div>
+</section>
 </body>
 </html>
