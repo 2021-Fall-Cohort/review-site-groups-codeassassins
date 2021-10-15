@@ -28,19 +28,12 @@ public class Populator implements CommandLineRunner {
 
         Phone phone1 = new Phone("Z-Flip", Phone.PhoneType.SMART_FLIP,"Samsung's latest foray into flip phones",samsung,Phone.PricePoint.$$$);
         phoneRepo.save(phone1);
-<<<<<<< HEAD
         Phone phone2 = new Phone("iPhone 13 Max", Phone.PhoneType.SMART, "Apple's newest, latest and greatest!", apple, Phone.PricePoint.$$$$);
         phoneRepo.save(phone2);
         Phone phone3 = new Phone("Razr", Phone.PhoneType.SMART_FLIP, "Just because we can, doesn't mean you should....", motorola, Phone.PricePoint.$);
         phoneRepo.save(phone3);
 
-
-=======
-        Phone phone2 = new Phone("iPhone 13", Phone.PhoneType.SMART, apple, Phone.PricePoint.$$$$);
-        phoneRepo.save(phone2);
-        Phone phone3 = new Phone("Razr", Phone.PhoneType.SMART_FLIP, motorola, Phone.PricePoint.$$$);
-        phoneRepo.save(phone3);
->>>>>>> 65e9cf231d3581e1f75c8fb5119fb3d37efe39f8
+        
 
 
     }

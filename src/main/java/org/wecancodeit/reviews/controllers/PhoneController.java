@@ -30,7 +30,7 @@ public class PhoneController {
         }
 
     @PostMapping("/add")
-    public String addPhone(@RequestParam String name, @RequestParam Phone.PhoneType phoneType, @RequestParam Manufacturer manufacturer, Phone.PricePoint pricePoint) {
+    public String addPhone(@RequestParam String name, @RequestParam String description, @RequestParam Phone.PhoneType phoneType, @RequestParam Manufacturer manufacturer, Phone.PricePoint pricePoint) {
         Manufacturer manufacturer1;
         Optional<Manufacturer> manuOpt = manufacturerRepo.findByName(manufacturer);
         if(manuOpt.isEmpty()){
@@ -40,7 +40,7 @@ public class PhoneController {
         else {
             manufacturer1 = manuOpt.get();
         }
-        Phone newPhone = new Phone(name, phoneType, manufacturer1, pricePoint);
+        Phone newPhone = new Phone(name,  phoneType,description, manufacturer1, pricePoint);
         phoneRepo.save(newPhone);
         return "redirect:/Phones/";
     }

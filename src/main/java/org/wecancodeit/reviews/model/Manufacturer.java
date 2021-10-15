@@ -24,18 +24,15 @@ public class Manufacturer {
 
     }
 
-<<<<<<< HEAD
-    public String getName() {
-        return name;
-    }
-=======
-    public long getId() {
-        return id;
-    }
 
     public String getName() {
         return name;
     }
+
+    public long getId() {
+        return id;
+    }
+
 
     public String getLocation() {
         return location;
@@ -51,11 +48,4 @@ public class Manufacturer {
 //    }
 
 
-
-
->>>>>>> 65e9cf231d3581e1f75c8fb5119fb3d37efe39f8
-
-    public String getLocation() {
-        return location;
-    }
 }
