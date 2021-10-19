@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.util.Objects;
 
 @Entity
 public class Phone {
@@ -21,6 +22,7 @@ public class Phone {
         $$$,
         $$$$
     }
+
     @Id
     @GeneratedValue
     private long id;
@@ -30,33 +32,66 @@ public class Phone {
     private Manufacturer manufacturer;
     private PricePoint pricePoint;
     private PhoneType type;
+    private String imgUrl;
 
 
-public Phone(String name, PhoneType phoneType,  String description, Manufacturer manufacturer, PricePoint pricePoint) {
+public Phone(String name, PhoneType phoneType,  String description, Manufacturer manufacturer, PricePoint pricePoint, String imgUrl) {
         this.name = name;
         this.type = phoneType;
+        this.description = description;
         this.manufacturer = manufacturer;
         this.pricePoint = pricePoint;
+        this.imgUrl = imgUrl;
+    }
+
+    public Phone() {
+
     }
 
     public PhoneType getType() {
-        return type;
+
+    return type;
+    }
+
+    public String getImgUrl() {
+
+    return imgUrl;
     }
 
     public String getDescription() {
-        return description;
+
+    return description;
     }
 
     public Manufacturer getManufacturer() {
-        return manufacturer;
+
+    return manufacturer;
     }
 
     public PricePoint getPricePoint() {
-        return pricePoint;
+
+    return pricePoint;
     }
 
     public String getName() {
-        return name;
+
+    return name;
     }
+
+    @Override
+    public boolean equals(Object p) {
+        if (this == p) return true;
+        if (p == null || getClass() != p.getClass()) return false;
+        Phone phone = (Phone) p;
+        return id == phone.id && Objects.equals(name, phone.name) && Objects.equals(description, phone.description) && Objects.equals(manufacturer, phone.manufacturer) && Objects.equals(pricePoint, phone.pricePoint) && Objects.equals(imgUrl, phone.imgUrl);
+    }
+
+    @Override
+    public int hashCode() {
+    return Objects.hash(id, name, description, pricePoint, imgUrl );
+
+}
+
+
 
 }

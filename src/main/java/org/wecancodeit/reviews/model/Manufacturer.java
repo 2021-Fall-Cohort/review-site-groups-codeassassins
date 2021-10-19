@@ -20,13 +20,21 @@ public class Manufacturer {
     public Manufacturer(String name, String location) {
         this.name = name;
         this.location = location;
-        this.phones = new ArrayList<Phone>();
+//        this.phones = new ArrayList<Phone>();
+
+    }
+
+    public Manufacturer() {
 
     }
 
 
     public String getName() {
         return name;
+    }
+
+    public Collection<Phone> getPhones() {
+        return phones;
     }
 
     public long getId() {
@@ -41,11 +49,6 @@ public class Manufacturer {
     public Manufacturer(Manufacturer manufacturer) {
     }
 
-
-//    public void addPhone(Phone phone) {
-//
-//        phones.add(phone);
-//    }
 
 
 }

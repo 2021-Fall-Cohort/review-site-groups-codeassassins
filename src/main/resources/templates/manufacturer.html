@@ -8,18 +8,23 @@
 
 </head>
 <body>
+<div th:replace="fragments.html :: header"></div>
 <h1 th:text="{manufacturer.name}"></h1>
 <section>
   <br>
   <br>
   <div class="manufacturer">
 
-    <h2 th:text="${manufacturer.name}">Samsung</h2>
-
+    <h2 th:text="${manufacturer.name}"></h2>
     <p th:text="${manufacturer.location}"></p>
-    <p th:text="${manufacturer.phone}"></p>
+    <ul>
+      <li th:each="phone:${manufacturer.phones}">
+        <p th:text="${phone.name}"></p>
+        <img>
+      </li>
+    </ul>
   </div>
 </section>
-
+<div th:replace="fragments.html :: footer"></div>
 </body>
 </html>

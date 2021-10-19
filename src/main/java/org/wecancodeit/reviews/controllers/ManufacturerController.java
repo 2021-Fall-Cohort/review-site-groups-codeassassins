@@ -14,32 +14,17 @@ import org.wecancodeit.reviews.repos.PhoneRepository;
 import java.util.Optional;
 
 @Controller
-public class PhoneController {
+public class ManufacturerController {
 
-     private ManufacturerRepository manufacturerRepo;
-     private PhoneRepository phoneRepo;
+    private ManufacturerRepository manufacturerRepo;
+    private PhoneRepository phoneRepo;
 
-
-    public PhoneController(ManufacturerRepository manufacturerRepo, PhoneRepository phoneRepo) {
+    public ManufacturerController(ManufacturerRepository manufacturerRepo, PhoneRepository phoneRepo) {
         this.manufacturerRepo = manufacturerRepo;
         this.phoneRepo = phoneRepo;
-
     }
 
-    @RequestMapping("/")
-    public String showPhones(Model model){
-
-        return "phones";
-    }
-
-    @RequestMapping("/home")
-    public String showHome(Model model){
-
-        return "index";
-    }
-
-    
-    @PostMapping("/add")
+    @PostMapping("/phones")
     public String addPhone(@RequestParam String name, @RequestParam String description, @RequestParam Phone.PhoneType phoneType, @RequestParam Manufacturer manufacturer, Phone.PricePoint pricePoint, @RequestParam String imgUrl) {
         Manufacturer manufacturer1;
         Optional<Manufacturer> manuOpt = manufacturerRepo.findByName(manufacturer);
@@ -54,5 +39,7 @@ public class PhoneController {
         phoneRepo.save(newPhone);
         return "redirect:/Phones/";
     }
-}
 
+
+
+}

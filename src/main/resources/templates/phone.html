@@ -3,25 +3,26 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Phone Reviews! - iPhone</title>
+    <title>Phone Reviews!</title>
     <link rel="stylesheet"  href="./css/style.css">
 
 </head>
 <body>
-<h1 th:text="{phone.name}">Apple iPhone 13</h1>
+<div th:replace="fragments.html :: header"></div>
+
 <section>
     <br>
     <br>
     <div class="phone">
-
-        <h2 th:text="${phone.name}">iPhone</h2>
+        <h2 th:text ="${phone.name}"></h2>
+        <img th:src="${phone.imgUrl}">
         <p th:text="${phone.manufacturer}"></p>
         <p th:text="${phone.description}"></p>
         <p th:text="${phone.type}"></p>
         <p th:text="${phone.pricePoint}"></p>
-
-
+    </div>
     </div>
 </section>
+<div th:replace="fragments.html :: footer"></div>
 </body>
 </html>
