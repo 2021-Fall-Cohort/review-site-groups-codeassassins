@@ -24,22 +24,10 @@ public class ManufacturerController {
         this.phoneRepo = phoneRepo;
     }
 
-    @PostMapping("/phones")
-    public String addPhone(@RequestParam String name, @RequestParam String description, @RequestParam Phone.PhoneType phoneType, @RequestParam Manufacturer manufacturer, Phone.PricePoint pricePoint, @RequestParam String imgUrl) {
-        Manufacturer manufacturer1;
-        Optional<Manufacturer> manuOpt = manufacturerRepo.findByName(manufacturer);
-        if(manuOpt.isEmpty()){
-            manufacturer1 = new Manufacturer(manufacturer);
-            manufacturerRepo.save(manufacturer1);
-        }
-        else {
-            manufacturer1 = manuOpt.get();
-        }
-        Phone newPhone = new Phone(name,  phoneType, description, manufacturer1, pricePoint, imgUrl);
-        phoneRepo.save(newPhone);
-        return "redirect:/Phones/";
+    @RequestMapping("/manufacturers")
+    public String listManufacturers() {
+        return "manufacturer";
     }
-
 
 
 }

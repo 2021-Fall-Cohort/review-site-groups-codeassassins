@@ -4,8 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Objects;
+
 @Entity
 public class Manufacturer {
     @Id
@@ -50,5 +51,18 @@ public class Manufacturer {
     }
 
 
+    @Override
+    public boolean equals(Object p) {
+        if (this == p) return true;
+        if (p == null || getClass() != p.getClass()) return false;
+        Manufacturer manufacturer = (Manufacturer) p;
+        return id == manufacturer.id && Objects.equals(id, manufacturer.id) && Objects.equals(name, manufacturer.name) && Objects.equals(location, manufacturer.location);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, location);
+
+
+    }
 }
