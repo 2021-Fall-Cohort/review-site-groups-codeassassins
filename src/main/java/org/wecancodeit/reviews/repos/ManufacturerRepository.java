@@ -5,6 +5,6 @@ import org.wecancodeit.reviews.model.Manufacturer;
 
 import java.util.Optional;
 
-public interface ManufacturerRepository extends CrudRepository<Manufacturer, String> {
+public interface ManufacturerRepository extends CrudRepository<Manufacturer, Long> {
     Optional<Manufacturer> findByName(Manufacturer name);
 }
