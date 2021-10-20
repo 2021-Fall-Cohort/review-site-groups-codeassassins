@@ -16,7 +16,7 @@
     <div class="manufacturers">
         <ul>
             <li th:each="manufacturer: ${manufacturer}">
-                <a th:href="'/manufacturers/' + ${manufacturer.name}" th:text="${manufacturer.name}"></a>
+                <a th:href="'/manufacturers/' + ${manufacturer.name}" th:text="${manufacturer.name}" class="site_link"></a>
             </li>
         </ul>
     </div>
