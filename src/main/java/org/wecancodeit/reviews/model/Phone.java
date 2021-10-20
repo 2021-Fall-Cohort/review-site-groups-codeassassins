@@ -1,9 +1,8 @@
 package org.wecancodeit.reviews.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -34,14 +33,20 @@ public class Phone {
     private PhoneType type;
     private String imgUrl;
 
+    @ManyToMany
+    private Collection<Hashtag> hashtags;
 
-public Phone(String name, PhoneType phoneType,  String description, Manufacturer manufacturer, PricePoint pricePoint, String imgUrl) {
+public Phone(String name, PhoneType phoneType,  String description, Manufacturer manufacturer, PricePoint pricePoint, String imgUrl, Hashtag...hashtags) {
         this.name = name;
         this.type = phoneType;
         this.description = description;
         this.manufacturer = manufacturer;
         this.pricePoint = pricePoint;
         this.imgUrl = imgUrl;
+        //this.hashtags = new ArrayList<Hashtag>();
+        //this.hashtags = List.of(hashtags);
+        this.hashtags = Arrays.asList(hashtags);
+
     }
 
     public Phone() {
@@ -78,6 +83,17 @@ public Phone(String name, PhoneType phoneType,  String description, Manufacturer
     return name;
     }
 
+    public Collection<Hashtag> getHashtags() {
+        return hashtags;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void addHashtag(Hashtag hashtag){
+        hashtags.add(hashtag);
+    }
     @Override
     public boolean equals(Object p) {
         if (this == p) return true;

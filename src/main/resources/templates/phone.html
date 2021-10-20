@@ -20,6 +20,10 @@
         <p th:text="${phone.description}"></p>
         <p th:text="${phone.type}"></p>
         <p th:text="${phone.pricePoint}"></p>
+        <h3>Hashtags</h3>
+        <ul>
+            <li th:each="hashtag:${phone.hashtags}" th:text="${hashtag.name}"></li>
+        </ul>
     </div>
     </div>
 </section>
