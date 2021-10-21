@@ -14,13 +14,15 @@ public class Manufacturer {
     private long id;
     private String name;
     private String location;
+    private String logoUrl;
     @OneToMany(mappedBy = "manufacturer")
     Collection<Phone> phones;
 
 
-    public Manufacturer(String name, String location) {
+    public Manufacturer(String name, String location, String logoUrl) {
         this.name = name;
         this.location = location;
+        this.logoUrl = logoUrl;
 //        this.phones = new ArrayList<Phone>();
 
     }
@@ -42,6 +44,9 @@ public class Manufacturer {
         return id;
     }
 
+    public String getLogoUrl() {
+        return logoUrl;
+    }
 
     public String getLocation() {
         return location;

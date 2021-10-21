@@ -23,11 +23,11 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Manufacturer samsung = new Manufacturer("Samsung", "US");
+        Manufacturer samsung = new Manufacturer("Samsung", "US", "./images/Samsung.png");
         manufacturerRepo.save(samsung);
-        Manufacturer apple = new Manufacturer("Apple", "US");
+        Manufacturer apple = new Manufacturer("Apple", "US","./images/Apple.png");
         manufacturerRepo.save(apple);
-        Manufacturer motorola = new Manufacturer("Motorola", "US");
+        Manufacturer motorola = new Manufacturer("Motorola", "US","./images/Motorola-Logo-1.png");
         manufacturerRepo.save(motorola);
 
         Hashtag hashtag1 = new Hashtag("Great camera");
