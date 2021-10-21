@@ -26,10 +26,13 @@ public class PhoneController {
 
     }
 
-    @RequestMapping("/")
-    public String showPhones(Model model){
+    @RequestMapping("/phones/{name}")
+    public String showPhones(Model model, @PathVariable String name){
 
-        return "phones";
+        model.addAttribute("phone", phoneRepo.findAll());
+        model.addAttribute("name", phoneRepo.findByName(name));
+
+        return "phone";
     }
 
     @RequestMapping("/home")

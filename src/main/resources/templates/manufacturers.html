@@ -16,7 +16,7 @@
     <div class="manufacturers">
         <ul>
             <li th:each="manufacturer: ${manufacturer}">
-                <img th:src="${manufacturer.imgUrl}" class="manfacturer_logo">
+                <img th:src="${manufacturer.logoUrl}" class="manfacturer_logo">
                 <a th:href="'/manufacturers/' + ${manufacturer.name}" th:text="${manufacturer.name}" class="site_link"></a>
             </li>
         </ul>
