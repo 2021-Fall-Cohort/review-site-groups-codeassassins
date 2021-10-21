@@ -4,5 +4,5 @@ import org.springframework.data.repository.CrudRepository;
 import org.wecancodeit.reviews.model.Phone;
 
 public interface PhoneRepository extends CrudRepository<Phone, String> {
-    Object findByName(String name);
+    Phone findByName(String name);
 }
