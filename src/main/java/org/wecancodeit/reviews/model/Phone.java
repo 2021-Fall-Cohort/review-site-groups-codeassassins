@@ -36,7 +36,7 @@ public class Phone {
     @ManyToMany
     private Collection<Hashtag> hashtags;
 
-public Phone(String name, PhoneType phoneType,  String description, Manufacturer manufacturer, PricePoint pricePoint, String imgUrl, Hashtag...hashtags) {
+    public Phone(String name, PhoneType phoneType,  String description, Manufacturer manufacturer, PricePoint pricePoint, String imgUrl, Hashtag...hashtags) {
         this.name = name;
         this.type = phoneType;
         this.description = description;

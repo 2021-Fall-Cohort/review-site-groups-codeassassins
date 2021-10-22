@@ -38,7 +38,7 @@ public class PhoneController {
 
     @RequestMapping("/phones/{id}")
     public String showPhone(Model model, @PathVariable long id){
-        model.addAttribute("phone", phoneRepo.findById(id));
+        model.addAttribute("phone", phoneRepo.findById(id).get());
         return "phone";
     }
 
