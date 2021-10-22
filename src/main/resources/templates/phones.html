@@ -1,17 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<link rel="stylesheet"  href="./css/style.css">
+
 <head>
     <meta charset="UTF-8">
     <title>Phone Reviews - Main Page</title>
+  <link rel="stylesheet"  href="./css/style.css">
 </head>
 <body>
+<div th:replace="fragments.html :: header"></div>
 
-<div th:replace="fragments.html :: nav"></div>
-
+<section>
+  <br>
+  <br>
+  <div class="phones">
+    <ul>
+      <li th:each="phone: ${phone}">
+        <img th:src="${phone.imgUrl}" class="phone_image">
+        <a th:href="'/phone/' + ${phone.id}" th:text="${phone.id}" class="site_link"></a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</section>
 <hr>
+<h1>Add Phone Review: </h1>
+<br>
 <form action="/phones/add" method="POST">
   <label for="name">Name:</label><br>
   <input type="text" id="name" name="title"><br>
