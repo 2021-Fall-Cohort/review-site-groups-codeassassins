@@ -100,6 +100,18 @@ ul li {
   margin-left: 2%;
 }
 
+.phones_page_display {
+  margin-left: 8%;
+  border:none;
+
+}
+
+.phone_page_image {
+  width: 60%;
+  margin-bottom: 20%;
+  margin-top: 20%;
+}
+
  .phone_blurb {
   text-align: left;
   margin-top: 5%;

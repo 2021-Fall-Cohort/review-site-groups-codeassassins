@@ -30,7 +30,7 @@ public class PhoneController {
 
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/phones")
     public String listPhones(Model model) {
         model.addAttribute("phone", phoneRepo.findAll());
         return "phones";
