@@ -16,7 +16,7 @@
     <div class="phone">
         <h2 th:text ="${phone.name}"></h2>
         <img th:src="${phone.imgUrl}">
-        <p th:text="${phone.manufacturer}"></p>
+        <p th:text="${phone.manufacturer.name}"></p>
         <p th:text="${phone.description}"></p>
         <p th:text="${phone.type}"></p>
         <p th:text="${phone.pricePoint}"></p>
@@ -25,6 +25,12 @@
             <li th:each="hashtag:${phone.hashtags}" th:text="${hashtag.name}"></li>
         </ul>
     </div>
+    <div class="add_hashtag">
+        <form action="./add_hashtag" method="POST">
+            <label for="hashtag">Enter Hashtag:</label><br>
+            <input type="text" id="hashtag" name="hashtag"><br>
+            <input type="submit" value="Submit">
+        </form>
     </div>
 </section>
 <div th:replace="fragments.html :: footer"></div>

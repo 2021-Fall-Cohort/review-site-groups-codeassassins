@@ -19,8 +19,8 @@
     <ul>
       <li th:each="phone:${manufacturer.phones}">
         <p th:text="${phone.name}"></p>
-        <img th:src="${phone.imgUrl}" class="phone_image">
-        <img>
+        <a th:href="'/phones/' + ${phone.id}" ><img th:src="${phone.imgUrl}" class="phone_image"></a>
+
       </li>
     </ul>
   </div>
