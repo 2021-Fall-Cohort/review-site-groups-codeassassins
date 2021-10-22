@@ -27,6 +27,7 @@ public class ManufacturerController {
         return "manufacturers";
     }
 
+
     @RequestMapping("manufacturer/{id}")
     public String showManufacturer(Model model, @PathVariable long id) {
 

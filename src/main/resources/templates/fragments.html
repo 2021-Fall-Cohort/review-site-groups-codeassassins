@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
+      
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet"  href="./css/style.css">
+  <link rel="stylesheet"  href="../css/style.css">
   <title>Document</title>
 </head>
 <body>
@@ -14,14 +15,25 @@
 <section th:fragment="header" class="hero">
   <header id="header">
     <a id="logo" href="#">
-      <img src="../images/logo.png" alt="site logo"></a>
+      <img src="../images/Phone_Reviews_logo.png" alt="site logo"></a>
     <nav>
       <ul>
-        <li>Phones</li>
-        <li>Manufacturers</li>
+        <li><a th:href="'/phones/'">Phones</a></li>
+        <li><a th:href="'/manufacturers/'">Manufacturers</a></li>
       </ul>
     </nav>
+    <img src="./images/cil_hamburger-menu.png" alt="hamburger menu" class="display_none">
+    <span class="hero_text">Phones are expensive, make sure you're getting the right one</span>
   </header>
+</section>
+
+<section th:fragment="just_the_nav" class="fragment_nav">
+    <nav>
+      <ul>
+        <li><a th:href="'/phones/'">Phones</a></li>
+        <li><a th:href="'/manufacturers/'">Manufacturers</a></li>
+      </ul>
+    </nav>
 </section>
 
 <footer th:fragment="footer">

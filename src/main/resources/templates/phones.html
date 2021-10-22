@@ -5,30 +5,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Phone Reviews - Main Page</title>
-  <link rel="stylesheet"  href="./css/style.css">
+  <link rel="stylesheet"  href="../css/style.css">
 </head>
 <body>
 <div th:replace="fragments.html :: header"></div>
-
 <section>
   <br>
   <br>
-  <div class="phones">
+  <div class="phone_list_display phone_page_margin">
     <ul>
-      <li th:each="phone: ${phone}">
+      <li th:each="phone: ${phone}" class="phones">
+        <a th:href="'/phones/' + ${phone.id}" class="site_link"><p th:text="${phone.name}" class="phone_name"></p></a>
         <img th:src="${phone.imgUrl}" class="phone_image">
-        <a th:href="'/phone/' + ${phone.id}" th:text="${phone.id}" class="site_link"></a>
+
       </li>
     </ul>
   </div>
   </div>
 </section>
+
 <hr>
+<div class="add_hashtag">
 <h1>Add Phone Review: </h1>
+  <div class="add_hashtag_form">
 <br>
 <form action="/phones/add" method="POST">
   <label for="name">Name:</label><br>
-  <input type="text" id="name" name="title"><br>
+  <input type="text" id="name" name="title"><br><br>
 
   <label for="description">Description:</label><br>
   <input type="text" id="description" name="description" ><br><br>
@@ -44,6 +47,8 @@
 
   <input type="submit" value="Submit">
 </form>
+  </div>
+</div>
 
 <div th:replace="fragments.html :: footer"></div>
 </body>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Phone Reviews!</title>
-    <link rel="stylesheet"  href="./css/style.css">
+    <link rel="stylesheet"  href="../css/style.css">
 
 </head>
 <body>
@@ -13,11 +13,11 @@
 <section>
     <br>
     <br>
-    <div class="phone">
-        <h2 th:text ="${phone.name}"></h2>
+    <div class="phone_section phone_page_margin no_border">
+        <h2 th:text ="${phone.name}" class="phone_name"></h2>
         <img th:src="${phone.imgUrl}">
         <p th:text="${phone.manufacturer.name}"></p>
-        <p th:text="${phone.description}"></p>
+        <p th:text="${phone.description}" class="phone_blurb"></p>
         <p th:text="${phone.type}"></p>
         <p th:text="${phone.pricePoint}"></p>
         <h3>Hashtags</h3>
@@ -28,7 +28,7 @@
     <div class="add_hashtag">
         <form action="./add_hashtag" method="POST">
             <label for="hashtag">Enter Hashtag:</label><br>
-            <input type="text" id="hashtag" name="hashtag"><br>
+            <input type="text" id="hashtag" name="hashtag"><br><br>
             <input type="submit" value="Submit">
         </form>
     </div>
