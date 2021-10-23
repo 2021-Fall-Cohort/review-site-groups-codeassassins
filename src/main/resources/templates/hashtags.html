@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Phone Reviews - Main Page</title>
+    <link rel="stylesheet"  href="../css/style.css">
+</head>
+<body>
+<div th:replace="fragments.html :: header"></div>
+<section>
+    <br>
+    <br>
+    <div class="phone_list_display">
+        <ul>
+            <li th:each="hashtag: ${hashtag}">
+                <a th:href="'/hashtag/phones/' + ${hashtag.name}"class="site_link"><p th:text=" '#' + ${hashtag.name}" class="phone_name"></p></a>
+            </li>
+        </ul>
+    </div>
+    </div>
+</section>
+
+
+
+</body>
+</html>

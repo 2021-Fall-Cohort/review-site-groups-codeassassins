@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone Reviews! - Manufacturer</title>
+    <link rel="stylesheet"  href="../css/style.css">
+
+</head>
+<body>
+<div th:replace="fragments.html :: header"></div>
+
+<section>
+    <br>
+    <br>
+    <div class="phone_list_display">
+        <ul>
+            <li th:each="phone: ${phone}" class="phone_section phone_list_display phones_page_display">
+                <a th:href="'/phones/' + ${phone.id}" class="site_link phone_name"><p th:text="${phone.name}" class="phone_name"></p></a>
+            </li>
+        </ul>
+    </div>
+    </div>
+</section>
+</body>
+</html>

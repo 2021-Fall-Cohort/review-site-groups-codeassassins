@@ -5,7 +5,7 @@ import org.wecancodeit.reviews.model.Hashtag;
 
 import java.util.Optional;
 
-public interface HashtagRepository extends CrudRepository<Hashtag, Long> {
+public interface HashtagRepository extends CrudRepository<Hashtag, String> {
     Optional<Hashtag> findByNameIgnoreCase(String name);
 
 }

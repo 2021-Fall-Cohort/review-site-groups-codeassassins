@@ -30,13 +30,13 @@ public class Populator implements CommandLineRunner {
         Manufacturer motorola = new Manufacturer("Motorola", "US","./images/Motorola-Logo-1.png");
         manufacturerRepo.save(motorola);
 
-        Hashtag hashtag1 = new Hashtag("Great camera");
+        Hashtag hashtag1 = new Hashtag("Greatcamera");
         hashtagRepo.save(hashtag1);
 
-        Phone phone1 = new Phone("Z-Flip", Phone.PhoneType.SMART_FLIP,"Samsung's latest foray into flip phones",samsung,Phone.PricePoint.$$$,"/images/z_flip.jpg");
+
+        Phone phone1 = new Phone("Z-Flip", Phone.PhoneType.SMART_FLIP,"Samsung's latest foray into flip phones",samsung,Phone.PricePoint.$$$,"/images/z_flip.jpg", hashtag1);
         Phone phone2 = new Phone("iPhone 13 Max", Phone.PhoneType.SMART, "Apple's newest, latest and greatest!", apple, Phone.PricePoint.$$$$,"/images/iphone_13.png", hashtag1);
-        Phone phone3 = new Phone("Razr", Phone.PhoneType.SMART_FLIP, "Just because we can, doesn't mean you should....", motorola, Phone.PricePoint.$,"/images/razr.jpg");
-        //phone3.addHashtag(hashtag1);
+        Phone phone3 = new Phone("Razr", Phone.PhoneType.SMART_FLIP, "Just because we can, doesn't mean you should....", motorola, Phone.PricePoint.$,"/images/razr.jpg", hashtag1);
         phoneRepo.save(phone1);
         phoneRepo.save(phone2);
         phoneRepo.save(phone3);
