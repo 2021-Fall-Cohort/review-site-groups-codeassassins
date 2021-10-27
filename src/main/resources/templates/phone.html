@@ -27,7 +27,7 @@
 
         <h3>Comments:</h3>
         <ul>
-            <li th:each="comment:${phone.comment}"><p th:text="${phone.comment}"></li>
+            <li th:each="comment:${phone.comments}"><p th:text="${comment}"></li>
         </ul>
 
     </div>
@@ -35,7 +35,7 @@
     <div class="add_comment">
         <form th:action="'/phones/' + ${phone.id} + '/add_comment'" method="POST">
             <label for="hashtag">Enter Comment:</label><br>
-            <input type="text" id="comment" name="comment"><br><br>
+            <input type="textarea" id="comment" name="comment"><br><br>
             <input type="submit" value="Submit">
         </form>
     </div>

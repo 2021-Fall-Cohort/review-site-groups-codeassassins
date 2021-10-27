@@ -33,7 +33,6 @@ public class Phone {
     private PricePoint pricePoint;
     private PhoneType type;
     private String imgUrl;
-    private String comment;
     @ElementCollection
     private Collection<String> comments;
 
@@ -49,7 +48,7 @@ public class Phone {
         this.imgUrl = imgUrl;
         this.hashtags = Arrays.asList(hashtags);
         this.comments = new ArrayList<String>();
-        this.comment = comment;
+
 
     }
 
@@ -99,6 +98,10 @@ public class Phone {
 
     public void addHashtag(Hashtag hashtag){
         hashtags.add(hashtag);
+    }
+
+    public Collection<String> getComments() {
+        return comments;
     }
 
     public void addComment(String comment) {
