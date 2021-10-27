@@ -48,13 +48,13 @@ public class PhoneController {
         return "index";
     }
 
-    @RequestMapping("/phones/{id}/add_hashtag")
-    public String addHashtag(@PathVariable Long id, @RequestParam String hashTag) {
+    @PostMapping("/phones/{id}/add_hashtag")
+    public String addHashtag(@PathVariable Long id, @RequestParam String hashtag) {
         Phone phone = phoneRepo.findById(id).get();
         Hashtag hashtagToAdd;
-        Optional<Hashtag> hashtagOptional = hashtagRepo.findByNameIgnoreCase(hashTag);
+        Optional<Hashtag> hashtagOptional = hashtagRepo.findByNameIgnoreCase(hashtag);
         if(hashtagOptional.isEmpty()) {
-            Hashtag hashtag1 = new Hashtag(hashTag);
+            Hashtag hashtag1 = new Hashtag(hashtag);
             hashtagRepo.save(hashtag1);
             hashtagToAdd = hashtag1;
         } else {
@@ -65,6 +65,14 @@ public class PhoneController {
         return "redirect:/phones/" + id;
     }
 
+    @PostMapping("/phones/{id}/add_comment")
+    public String addComment(@PathVariable Long id, @RequestParam String comment) {
+        Phone phone = phoneRepo.findById(id).get();
+        phone.addComment(comment);
+        phoneRepo.save(phone);
+
+        return "redirect:/phones/" + id;
+    }
     
     @PostMapping("/add")
     public String addPhone(@RequestParam String name, @RequestParam String description, @RequestParam Phone.PhoneType phoneType, @RequestParam Manufacturer manufacturer, Phone.PricePoint pricePoint, @RequestParam String imgUrl) {

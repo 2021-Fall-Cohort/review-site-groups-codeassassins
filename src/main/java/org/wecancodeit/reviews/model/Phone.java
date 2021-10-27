@@ -1,6 +1,7 @@
 package org.wecancodeit.reviews.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Objects;
@@ -32,6 +33,9 @@ public class Phone {
     private PricePoint pricePoint;
     private PhoneType type;
     private String imgUrl;
+    private String comment;
+    @ElementCollection
+    private Collection<String> comments;
 
     @ManyToMany
     private Collection<Hashtag> hashtags;
@@ -43,9 +47,9 @@ public class Phone {
         this.manufacturer = manufacturer;
         this.pricePoint = pricePoint;
         this.imgUrl = imgUrl;
-        //this.hashtags = new ArrayList<Hashtag>();
-        //this.hashtags = List.of(hashtags);
         this.hashtags = Arrays.asList(hashtags);
+        this.comments = new ArrayList<String>();
+        this.comment = comment;
 
     }
 
@@ -78,6 +82,8 @@ public class Phone {
     return pricePoint;
     }
 
+
+
     public String getName() {
 
     return name;
@@ -93,6 +99,10 @@ public class Phone {
 
     public void addHashtag(Hashtag hashtag){
         hashtags.add(hashtag);
+    }
+
+    public void addComment(String comment) {
+        comments.add(comment);
     }
     @Override
     public boolean equals(Object p) {

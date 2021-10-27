@@ -3,13 +3,12 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Phone Reviews! - Manufacturer</title>
-    <link rel="stylesheet"  href="../css/style.css">
+    <title>Phone Reviews!</title>
+    <link rel="stylesheet"  href="/css/style.css">
 
 </head>
 <body>
 <div th:replace="fragments.html :: header"></div>
-
 <section>
     <br>
     <br>
@@ -17,10 +16,12 @@
         <ul>
             <li th:each="phone: ${phone}" class="phone_section phone_list_display phones_page_display">
                 <a th:href="'/phones/' + ${phone.id}" class="site_link phone_name"><p th:text="${phone.name}" class="phone_name"></p></a>
+                <img th:src="${phone.imgUrl}" class="phone_page_image" >
             </li>
         </ul>
     </div>
     </div>
 </section>
+<div th:replace="fragments.html :: footer"></div>
 </body>
 </html>
