@@ -83,7 +83,7 @@ ul li {
 
 .phone_list_display {
   display: inline-flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 5%;
 }
 
@@ -101,7 +101,7 @@ ul li {
 }
 
 .phones_page_display {
-  margin-left: 8%;
+  margin-left: 10%;
   border:none;
 
 }
@@ -155,7 +155,7 @@ ul li {
 }
 
 .manufacturer_logo {
-  width: 30%;
+  width: 10%;
 }
 
 .moto_logo {

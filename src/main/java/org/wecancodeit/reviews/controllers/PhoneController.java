@@ -42,9 +42,10 @@ public class PhoneController {
         return "phone";
     }
 
-    @RequestMapping("/home")
+    @RequestMapping("/")
     public String showHome(Model model){
-
+        model.addAttribute("phone", phoneRepo.findAll());
+        model.addAttribute("manufacturer", manufacturerRepo.findAll());
         return "index";
     }
 
