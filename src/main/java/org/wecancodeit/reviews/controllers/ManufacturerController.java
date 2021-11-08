@@ -28,7 +28,7 @@ public class ManufacturerController {
     }
 
 
-    @RequestMapping("manufacturer/{id}")
+    @RequestMapping("manufacturers/{id}")
     public String showManufacturer(Model model, @PathVariable long id) {
 
         model.addAttribute("manufacturer", manufacturerRepo.findById(id).get());

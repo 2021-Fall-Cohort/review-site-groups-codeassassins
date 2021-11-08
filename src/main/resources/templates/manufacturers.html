@@ -13,10 +13,10 @@
 <section>
     <br>
     <br>
+    <h1>Manufacturers: </h1>
     <div class="manufacturers">
         <ul>
             <li th:each="manufacturer: ${manufacturer}">
-                <img th:src="${manufacturer.logoUrl}" class="manfacturer_logo">
                 <a th:href="'/manufacturers/' + ${manufacturer.id}" th:text="${manufacturer.name}" class="site_link"></a>
             </li>
         </ul>
